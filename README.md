@@ -13,6 +13,7 @@ The following demonstration code uses the iris dataset (https://archive.ics.uci.
 import pandas as pd
 from obj.network_params import network_obj
 from model_builder import build_model
+from stats.train_validate import stratified_split
 
 dataframe= pd.read_csv("iris.data", header=None)
 dataset = dataframe.values
@@ -23,7 +24,7 @@ Y = dataset[:,4]
 NN = network_obj(n_features = 4,n_labels = 3,n_hidden = 2, units_hidden = [10,5])
 NN_L2 = build_model(NN,reg_type = 'L2')
 
-from stats.train_validate import stratified_split
+
 
 iris_skf = stratified_split(NN_L2, loss = 'categorical_crossentropy', features=X, target=Y)
 
