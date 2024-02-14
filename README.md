@@ -31,7 +31,11 @@ iris_skf = stratified_split(NN_L2, loss = 'categorical_crossentropy', features=X
 ## Dependencies
 
 tensorflow
+
 keras
+
 scikit-learn
+
 numpy
+
 pandas
