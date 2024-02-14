@@ -24,8 +24,6 @@ Y = dataset[:,4]
 NN = network_obj(n_features = 4,n_labels = 3,n_hidden = 2, units_hidden = [10,5])
 NN_L2 = build_model(NN,reg_type = 'L2')
 
-
-
 iris_skf = stratified_split(NN_L2, loss = 'categorical_crossentropy', features=X, target=Y)
 
 ## Dependencies
