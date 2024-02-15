@@ -15,9 +15,9 @@ dataset is a classic example of a well-explored classification problem and the a
 ```
 #import dependencies
 import pandas as pd
-from obj.network_params import network_obj
+from network_params import network_obj
 from model_builder import build_model
-from stats.train_validate import stratified_split
+from train_validate import stratified_split
 ```
 ```
 #Load data
