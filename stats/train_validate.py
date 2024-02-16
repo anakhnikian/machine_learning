@@ -79,16 +79,5 @@ def kfold_split(NN, features, target, loss, epochs = 200, batch_size = 32, n_spl
         
     return accuracies
 
-def kfold_split_old(model, features, labels, loss, epochs = 200, batch_size = 32, n_splits = 5, verbose = 0, optimizer = 'adam', metrics = ['accurcy']):
-    #features still need to be converted to float in command line, write a prep 
-    #function to do this automatically
-    
-    encoder = LabelEncoder()
-    encoder.fit(labels)
-    encoded_labels = encoder.transform(labels)
-    onehot_labels = to_categorical(encoded_labels)
-    estimator = KerasClassifier(build_fn=model, epochs=epochs, batch_size=batch_size, verbose=verbose)
-    kfold = KFold(n_splits=n_splits, shuffle=True)
-    results = cross_val_score(estimator, features, onehot_labels, cv=kfold)
-    return results
+
     
